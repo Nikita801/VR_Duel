@@ -24,7 +24,7 @@ public class AI_Shooting : MonoBehaviour
     {
         if (Gun_Fire.ready && EnemyStat.health > 0)
         {
-            Spine.transform.LookAt(player.transform.position);
+            //Spine.transform.LookAt(player.transform.position);
 
             if (ShootTimer <= 0)
             {
