@@ -1311,6 +1311,7 @@ MonoBehaviour:
   ShootSound: {fileID: 5053538389955983935}
   ZeroBullet: {fileID: 914672548374094225}
   ReloadBullet: {fileID: 1183032128806815918}
+  clips: []
 --- !u!65 &1474699250857369137
 BoxCollider:
   m_ObjectHideFlags: 0
