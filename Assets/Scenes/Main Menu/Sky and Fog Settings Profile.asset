@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0}
   spaceEmissionTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 56c1cebf93b7adc4d9deba54109837fd, type: 3}
+    m_Value: {fileID: 8900000, guid: 02bc6740da4c55a40be1b602857d4afc, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
     m_Value: 10000
@@ -256,7 +256,7 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 4.84
+    m_Value: 1000
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
