@@ -1256,6 +1256,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8658584423011945550, guid: a2e6238e099c8ef4daecf2a591388072,
+        type: 3}
+      propertyPath: highlightOnHover
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e6238e099c8ef4daecf2a591388072, type: 3}
 --- !u!1001 &537715652
@@ -1823,6 +1828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732448462571967649, guid: dbe958217a3b15444be93ae4f4a8ad45,
+        type: 3}
+      propertyPath: highlightOnHover
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe958217a3b15444be93ae4f4a8ad45, type: 3}
@@ -2799,6 +2809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.964005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7917720842804675648, guid: 1cd7a7da92f00714087b8aff745bede7,
+        type: 3}
+      propertyPath: highlightOnHover
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7917720842804675651, guid: 1cd7a7da92f00714087b8aff745bede7,
         type: 3}
@@ -4929,6 +4944,11 @@ PrefabInstance:
       propertyPath: attachmentOffset
       value: 
       objectReference: {fileID: 792053756}
+    - target: {fileID: 3667403937770389530, guid: 3b6dc0e20469998438ab89db4d2c064b,
+        type: 3}
+      propertyPath: highlightOnHover
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3667403937770389533, guid: 3b6dc0e20469998438ab89db4d2c064b,
         type: 3}
       propertyPath: m_Name
