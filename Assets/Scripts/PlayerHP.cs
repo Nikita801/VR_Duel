@@ -53,12 +53,12 @@ public class PlayerHP : MonoBehaviour
         if (playerhealth <= 0)
         {
             PlayerDead();
-            Weapon.SetActive(false);
+            //Weapon.SetActive(false);
         }
     }
     public void PlayerDead()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         Damage.SetActive(true);
         skeletonUI.AnimateHandWithController();
     }

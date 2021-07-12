@@ -10,6 +10,7 @@ TagManager:
   - SlowArea
   - EnemyBulet
   - Weapon
+  - SpawnWeapon
   layers:
   - Default
   - TransparentFX
