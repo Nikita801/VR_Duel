@@ -39,9 +39,9 @@ public class GameControl : MonoBehaviour
         if (RightButtonL.activeSelf || LeftButtonL.activeSelf)
         {
             locations[currentLocation].SetActive(true);
-            for (int i = 0; i < weapons.Length; i++)
+            for (int i = 0; i < locations.Length; i++)
             {
-                if (i != currentWeapon)
+                if (i != currentLocation)
                 {
                     locations[i].SetActive(false);
                 }
@@ -67,7 +67,7 @@ public class GameControl : MonoBehaviour
     }
     public void SelectLocation()
     {
-        if (weapons[currentWeapon].activeSelf || RightButtonW.activeSelf || LeftButtonW.activeSelf)
+        if (RightButtonW.activeSelf || LeftButtonW.activeSelf)
         {
             RightButtonW.SetActive(false);
             LeftButtonW.SetActive(false);
@@ -80,21 +80,21 @@ public class GameControl : MonoBehaviour
     {
         currentWeapon = (currentWeapon+1)%weapons.Length;
     }
-    public void LeftNextW()
-    {
-        currentWeapon = (currentWeapon - 1) % weapons.Length;
-    }
+    //public void LeftNextW()
+    //{
+    //    currentWeapon = (currentWeapon - 1) % weapons.Length;
+    //}
     public void RightNextL()
     {
         currentLocation = (currentLocation + 1) % locations.Length;
     }
-    public void LeftNextL()
-    {
-        currentLocation = (currentLocation - 1) % locations.Length;
-    }
+    //public void LeftNextL()
+    //{
+    //    currentLocation = (currentLocation - 1) % locations.Length;
+    //}
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(currentLocation.ToString());
+        SceneManager.LoadScene(currentLocation + 1);
     }
 }
