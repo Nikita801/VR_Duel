@@ -80,19 +80,32 @@ public class GameControl : MonoBehaviour
     {
         currentWeapon = (currentWeapon+1)%weapons.Length;
     }
-    //public void LeftNextW()
-    //{
-    //    currentWeapon = (currentWeapon - 1) % weapons.Length;
-    //}
+    public void LeftNextW()
+    {
+        if (currentWeapon > 0)
+        {
+            currentWeapon--;
+        }
+        else
+        {
+            currentWeapon = weapons.Length;
+        }
+    }
     public void RightNextL()
     {
         currentLocation = (currentLocation + 1) % locations.Length;
     }
-    //public void LeftNextL()
-    //{
-    //    currentLocation = (currentLocation - 1) % locations.Length;
-    //}
-
+    public void LeftNextL()
+    {
+        if (currentLocation>0)
+        {
+            currentLocation--;
+        }
+        else
+        {
+            currentLocation = locations.Length;
+        }
+    }
     public void PlayButton()
     {
         SceneManager.LoadScene(currentLocation + 1);

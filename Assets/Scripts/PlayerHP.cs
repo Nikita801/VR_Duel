@@ -8,7 +8,7 @@ using Valve.VR.InteractionSystem;
 
 public class PlayerHP : MonoBehaviour
 {
-    [SerializeField] private float playerhealth;
+    [SerializeField] public float playerhealth;
     [SerializeField] private GameObject Damage;
     [SerializeField] private GameObject PauseMenu;
     private float Timer;
@@ -27,19 +27,19 @@ public class PlayerHP : MonoBehaviour
     //}
     //private void Update()
     //{
-    //    if (Timer <= 0)
-    //    {
-    //        Damage.color = Color.clear;
-    //        //Color c = Damage.color;
-    //        //c.a = 0xFF;
-    //        //Damage.color = c;
-    //    }
-    //    else
-    //    {
-    //        Damage.color = Color.white;
+    //    //if (Timer <= 0)
+    //    //{
+    //    //    Damage.color = Color.clear;
+    //    //    //Color c = Damage.color;
+    //    //    //c.a = 0xFF;
+    //    //    //Damage.color = c;
+    //    //}
+    //    //else
+    //    //{
+    //    //    Damage.color = Color.white;
 
-    //        Timer -= Time.deltaTime;
-    //    }
+    //    //    Timer -= Time.deltaTime;
+    //    //}
     //}
     public void TakeDamage(int damage, string HitArea)
     {
@@ -53,31 +53,19 @@ public class PlayerHP : MonoBehaviour
         if (playerhealth <= 0)
         {
             PlayerDead();
-            //Weapon.SetActive(false);
         }
     }
     public void PlayerDead()
     {
-        //Time.timeScale = 0f;
         Damage.SetActive(true);
         skeletonUI.AnimateHandWithController();
+        MenuScript.ready = false;
     }
     public void Pause()
     {
         PauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        Gun_Fire.ready = false;
-    }
-    public void Resume()
-    {
-        Time.timeScale = 1f;
-        Damage.SetActive(false);
-        PauseMenu.SetActive(true);
-        Weapon.SetActive(true);
-    }
-    public void Resett()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        skeletonUI.AnimateHandWithController();
+        MenuScript.ready = false;
     }
     //public void ShowController()
     //{

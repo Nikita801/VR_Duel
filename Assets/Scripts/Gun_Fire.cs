@@ -28,7 +28,6 @@ public class Gun_Fire : MonoBehaviour
     public AudioSource ZeroBullet;
     public AudioSource ReloadBullet;
 
-    public static bool ready;
     public GameObject[] clips;
     private int clipCount;
 
@@ -46,8 +45,6 @@ public class Gun_Fire : MonoBehaviour
     {
         if (interactable.attachedToHand != null)
         {
-            ready = true;
-
             CountBullet.GetComponent<Text>().text = bulletCount.ToString();
             SteamVR_Input_Sources source = interactable.attachedToHand.handType;
 
@@ -63,13 +60,12 @@ public class Gun_Fire : MonoBehaviour
             }
 
             /*Only for Non VR Developer*/
-            if(Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire && bulletCount != 0)
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire && bulletCount != 0 && MenuScript.ready == true)
             {
                 nextFire = Time.time + 1f / fireRate;
                 Shoot();
             }
-
-            else if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire && bulletCount == 0)
+            else if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire && (bulletCount == 0 || MenuScript.ready == false))
             {
                 ZeroBullet.Play();
             }
@@ -86,10 +82,6 @@ public class Gun_Fire : MonoBehaviour
                     Debug.Log("Не хватает обойм");
                 }
             }
-        }
-        else
-        {
-            ready = false;
         }
     }
 
