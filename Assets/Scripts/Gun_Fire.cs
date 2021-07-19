@@ -48,13 +48,13 @@ public class Gun_Fire : MonoBehaviour
             CountBullet.GetComponent<Text>().text = bulletCount.ToString();
             SteamVR_Input_Sources source = interactable.attachedToHand.handType;
 
-            if (fireAction[source].stateDown && Time.time > nextFire && bulletCount != 0)
+            if (fireAction[source].stateDown && Time.time > nextFire && bulletCount != 0 && MenuScript.ready == true)
             {
                 nextFire = Time.time + 1f / fireRate;
                 Shoot();
             }
 
-            else if (fireAction[source].stateDown && Time.time > nextFire && bulletCount == 0)
+            else if (fireAction[source].stateDown && Time.time > nextFire && (bulletCount == 0 || MenuScript.ready == false))
             {
                 ZeroBullet.Play();
             }
