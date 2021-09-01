@@ -11,6 +11,10 @@ TagManager:
   - EnemyBulet
   - Weapon
   - SpawnWeapon
+  - Metal
+  - Wood
+  - Glass
+  - Decal
   layers:
   - Default
   - TransparentFX

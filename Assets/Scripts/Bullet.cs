@@ -10,14 +10,21 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float Nlifetime;
     [SerializeField] private int damage;
     [SerializeField] private ParticleSystem particle_System;
+
+    public GameObject decal;
+    Vector3 lastPos;
+
     private void Awake()
     {
         lifetime = Nlifetime;
     }
+
     private void Start()
     {
+        lastPos = transform.position;
         particle_System.Play();
     }
+
     private void FixedUpdate()
     {
 
@@ -31,8 +38,28 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        RaycastHit hit;
+
+        if (Physics.Linecast(lastPos, transform.position, out hit))
+        {
+            if (hit.collider.tag == "Decal")
+            {
+                GameObject d = Instantiate<GameObject>(decal);
+
+                d.transform.position = hit.point + hit.normal * 0.001f;
+                d.transform.rotation = Quaternion.LookRotation(-hit.normal);
+                Destroy(d, 10);
+                Destroy(gameObject);
+            }
+        }
+        lastPos = transform.position;
+    }
+
     void OnTriggerEnter(Collider other)
     {
+
         switch (other.tag)
         {
             case "Enemy":
@@ -44,6 +71,7 @@ public class Bullet : MonoBehaviour
                 other.GetComponent<PlayerHP>().TakeDamage(damage, other.name);
                 Destroy(this.gameObject);
                 break;
+
         }
         if (other.CompareTag("SlowArea") && gameObject.CompareTag("EnemyBulet"))
         {

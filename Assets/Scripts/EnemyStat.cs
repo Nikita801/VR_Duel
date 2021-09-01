@@ -22,14 +22,6 @@ public class EnemyStat : MonoBehaviour
     {
         health -= damage;
 
-        //switch (HitArea)
-        //{
-        //    case "VBOT_:Head":
-        //        health -= damage * 2;
-        //        text.text = "- " + damage;
-        //        break;
-        //}
-
         if (health <= 0)
         {
             health = Mathf.Clamp(health, 0, 100);

@@ -16,12 +16,15 @@ public class AI_Shooting : MonoBehaviour
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         EnemyStat = GetComponent<EnemyStat>();
+        MenuScript.ready = false;
     }
+
+    
 
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         if (MenuScript.ready == true && EnemyStat.health > 0)
         {
             //Spine.transform.LookAt(player.transform.position);
@@ -30,13 +33,17 @@ public class AI_Shooting : MonoBehaviour
             {
                 Bot_Gun.barrelPivot.LookAt(player.transform.position);
 
-                if (EnemyStat.health > 0 && player.GetComponentInChildren<PlayerHP>().playerhealth > 0)
-                Bot_Gun.Shoot();
+                if (EnemyStat.health > 0 && player.GetComponent<PlayerHP>().playerhealth > 0)
+                    Bot_Gun.Shoot();
             }
             else
             {
                 ShootTimer -= Time.deltaTime;
             }
+        }
+        else
+        {
+            ShootTimer = ShootSpeed;
         }
     }
     //void shoot()

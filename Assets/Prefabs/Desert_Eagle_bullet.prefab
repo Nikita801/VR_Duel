@@ -94,12 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11660f4ec8f6aa143ba53699e1721ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bspeed: 50
+  Bspeed: 45
   Slowspeed: 0
   Nlifetime: 10
-  damage: 40
+  damage: 50
   particle_System: {fileID: 3084136381816882077, guid: 706fbe557da6c3c40984449472f0b3f9,
     type: 3}
+  decal: {fileID: 5694094667153423003, guid: d5d746d688fffa64e97b3f15a28378dc, type: 3}
 --- !u!54 &8406336786740873736
 Rigidbody:
   m_ObjectHideFlags: 0
