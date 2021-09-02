@@ -28,10 +28,6 @@ public class PlayerHP : MonoBehaviour
 
     public GameObject[] playerHP;
 
-    public List<GameObject> Bots;
-    public bool ZeroBot = false;
-    private int BotsHP = 0;
-
     public void Awake()
     {
         Weapon = GameObject.FindGameObjectWithTag("Weapon");
@@ -54,25 +50,7 @@ public class PlayerHP : MonoBehaviour
             playerHP[0].SetActive(false);
             Hurt1.SetActive(true);
         }
-
-        for (int i = 0; i < Bots.Count; i++)
-        {
-            BotsHP += Bots[i].GetComponent<EnemyStat>().health;
-        }
-
-        Debug.Log(BotsHP + "ХР ботов");
-        if (BotsHP <= 0)
-        {
-            Laser.thickness = 0.001f;
-            PlayerWin();
-        }
-
-        for (int i = 0; i < Bots.Count; i++)
-        {
-            BotsHP -= Bots[i].GetComponent<EnemyStat>().health;
-        }
     }
-
     //private void Start()
     //{
     //    Damage.color = Color.clear;

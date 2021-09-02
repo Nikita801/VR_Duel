@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameControl : MonoBehaviour
 
     [SerializeField] private GameObject[] locations;
     [SerializeField] private GameObject[] weapons;
+
+    [SerializeField] private Text Weapon;
+    [SerializeField] private Text Location;
 
     private void Update()
     {
@@ -53,6 +57,31 @@ public class GameControl : MonoBehaviour
             {
                 locations[i].SetActive(false);
             }
+        }
+
+        switch (currentWeapon)
+        {
+            case 0:
+                Weapon.text = "- Deagle";
+                break;
+            case 1:
+                Weapon.text = "- Colt";
+                break;
+            case 2:
+                Weapon.text = "- TT";
+                break;
+            case 3:
+                Weapon.text = "- Luger";
+                break;
+        }
+        switch (currentLocation)
+        {
+            case 0:
+                Location.text = "- Space";
+                break;
+            case 1:
+                Location.text = "- Western";
+                break;
         }
     }
     public void SelectWeapon()
@@ -106,8 +135,8 @@ public class GameControl : MonoBehaviour
             currentLocation = locations.Length;
         }
     }
-    public void PlayButton()
-    {
-        SceneManager.LoadScene(currentLocation + 1);
-    }
+    //public void PlayButton()
+    //{
+    //    SceneManager.LoadScene(currentLocation + 1);
+    //}
 }

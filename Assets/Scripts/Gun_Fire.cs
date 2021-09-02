@@ -37,7 +37,7 @@ public class Gun_Fire : MonoBehaviour
         interactable = GetComponent<Interactable>();
         bulletCount = clip;
         clipCount = clips.Length;
-        Debug.Log(clipCount);
+        Debug.Log("Кол-во обойм " + clipCount);
     }
 
     // Update is called once per frame
